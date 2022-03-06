@@ -33,8 +33,8 @@ public class SftpDownloadConfig {
 	public SftpInboundFileSynchronizer synchronizer() {
 		SftpInboundFileSynchronizer sync = new SftpInboundFileSynchronizer(stConfig.factory());
 		sync.setDeleteRemoteFiles(true);
-		sync.setRemoteDirectory("/Mention Source Directory Here..");
-		sync.setFilter(new SftpSimplePatternFileListFilter("*.xml"));
+		sync.setRemoteDirectory("/pub/example");
+		sync.setFilter(new SftpSimplePatternFileListFilter("*.txt"));
 		return sync;
 	}
 
@@ -44,7 +44,7 @@ public class SftpDownloadConfig {
 	public MessageSource<File> sftpMessageSource() {
 		SftpInboundFileSynchronizingMessageSource source = new SftpInboundFileSynchronizingMessageSource(
 				synchronizer());
-		source.setLocalDirectory(new File("mention Destination Directory"));
+		source.setLocalDirectory(new File("C:\\Users\\Kran-PC-1511\\Desktop\\Ebin B Kran\\Destination"));
 		source.setAutoCreateLocalDirectory(true);
 		source.setMaxFetchSize(10);
 		return source;

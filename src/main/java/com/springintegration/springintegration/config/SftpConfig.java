@@ -9,11 +9,11 @@ public class SftpConfig {
 	// set SFTP Properties here...
 		public DefaultSftpSessionFactory factory() {
 			DefaultSftpSessionFactory factory = new DefaultSftpSessionFactory();
-			factory.setHost("192.168.0.128");
+			factory.setHost("test.rebex.net");
 			factory.setPort(22);
 			factory.setAllowUnknownKeys(true);
-			factory.setUser("kran");
-			factory.setPassword("night123");
+			factory.setUser("demo");
+			factory.setPassword("password");
 			return factory;
 		}
 }

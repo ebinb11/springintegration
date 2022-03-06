@@ -20,7 +20,7 @@ public class SftpUploadConfig {
 	public String sftpUpload(Message<?> message) {
 		System.out.println("Received message from messageRequest : " + message);
 		SftpMessageHandler handler = new SftpMessageHandler(sftpConfig.factory());
-		handler.setRemoteDirectoryExpression(new LiteralExpression("DESTINATION_DIR"));
+		handler.setRemoteDirectoryExpression(new LiteralExpression("/pub/example"));
 		handler.setFileNameGenerator(new FileNameGenerator() {
 			@Override
 			public String generateFileName(Message<?> message) {
