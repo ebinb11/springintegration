@@ -25,22 +25,24 @@ public class GatewayController {
 
 	@Autowired
 	GatewayService gatewayService;
-	
+
 	@GetMapping("send")
 	public ResponseEntity<String> send(@RequestParam String message) {
 		String response = gatewayService.send(message);
 		return ResponseEntity.status(HttpStatus.OK).body(response);
 	}
-	
+
 	@GetMapping("convertToXml")
-	public ResponseEntity<StringWriter> convertToXml(@RequestBody StatesDTO statesDTO) throws JAXBException {
+	public ResponseEntity<StringWriter> convertToXml(@RequestBody StatesDTO statesDTO) 
+			throws JAXBException {
 		StringWriter response = gatewayService.convertToXml(statesDTO);
 		return ResponseEntity.status(HttpStatus.OK).body(response);
 	}
-	
+
 	@PostMapping("uploadFile")
-	public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
-		String response = gatewayService.uplaodFile(file);
+	public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) 
+			throws IOException {
+		String response = gatewayService.uploadFile(file);
 		return ResponseEntity.status(HttpStatus.OK).body(response);
 	}
 }

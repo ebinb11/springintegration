@@ -15,6 +15,6 @@ public interface GatewayService {
 
 	public StringWriter convertToXml(StatesDTO statesDTO) throws JAXBException;
 
-	public String uplaodFile(MultipartFile file) throws IOException;
+	public String uploadFile(MultipartFile file) throws IOException;
 
 }

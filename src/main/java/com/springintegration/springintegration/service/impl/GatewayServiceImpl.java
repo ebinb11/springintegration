@@ -48,7 +48,7 @@ public class GatewayServiceImpl implements GatewayService {
 	}
 
 	@Override
-	public String uplaodFile(MultipartFile file) throws IOException {
+	public String uploadFile(MultipartFile file) throws IOException {
 		 File convFile = new File(file.getOriginalFilename());
 	        FileOutputStream fos = new FileOutputStream(convFile);
 	        fos.write(file.getBytes());
