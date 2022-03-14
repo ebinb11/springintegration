@@ -33,14 +33,14 @@ public class SftpDownloadConfig {
 	public SftpInboundFileSynchronizer synchronizer() {
 		SftpInboundFileSynchronizer sync = new SftpInboundFileSynchronizer(stConfig.factory());
 		sync.setDeleteRemoteFiles(true);
-		sync.setRemoteDirectory("/pub/example");
+		sync.setRemoteDirectory("/home/ebinb11/Documents");
 		sync.setFilter(new SftpSimplePatternFileListFilter("*.txt"));
 		return sync;
 	}
 
 	// Store DATA To Destination Directory.
 	@Bean
-	@InboundChannelAdapter(channel = "fileDownload", poller = @Poller(fixedDelay = "55555000"))
+	@InboundChannelAdapter(channel = "fileDownload", poller = @Poller(fixedDelay = "500001111111"))
 	public MessageSource<File> sftpMessageSource() {
 		SftpInboundFileSynchronizingMessageSource source = new SftpInboundFileSynchronizingMessageSource(
 				synchronizer());

@@ -18,6 +18,6 @@ public interface MessagingGatewayService {
 	public StringWriter convertToXml(StringWriter sw);
 
 	@Gateway(requestChannel = "toSftpUpload")
-	String upload(File file);
+	void upload(File file);
 
 }

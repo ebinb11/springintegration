@@ -33,3 +33,5 @@ build/
 
 ### VS Code ###
 .vscode/
+/file-sample_150kB.pdf
+/hjh.pdf

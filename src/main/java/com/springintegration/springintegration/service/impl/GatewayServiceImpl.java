@@ -53,7 +53,7 @@ public class GatewayServiceImpl implements GatewayService {
 	        FileOutputStream fos = new FileOutputStream(convFile);
 	        fos.write(file.getBytes());
 	        fos.close();
-		String response =  messagingService.upload(convFile);
-		return  response;
+		messagingService.upload(convFile);
+		return  "Uploaded";
 	}
 }
